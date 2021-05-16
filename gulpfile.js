@@ -11,14 +11,14 @@ let path = {
 		css: project_folder + "/css/",
 		js: project_folder + "/js/",
 		img: project_folder + "/img/",
-		fonts: project_folder + "/fonts/",
+		fonts: project_folder + "/_fonts/",
 	},
 	src: {
 		html: [source_folder + "/*.html" , "!" + source_folder + "/_*.html"],
 		css: source_folder + "/sass/style.sass",
 		js: source_folder + "/js/script.js",
 		img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
-		fonts: source_folder + "/fonts/*.ttf",
+		fonts: source_folder + "/_fonts/*.ttf",
 	},
 	watch:{
 		html: source_folder + "/**/*.html",
@@ -136,9 +136,9 @@ let	ttf2woff2 = require('gulp-ttf2woff2'); /*подключаем к css webp*/
 			.pipe(dest(path.build.fonts))
 	}
 	function fontsStyle(params) {
-		let file_content = fs.readFileSync(source_folder + '/sass/fonts.sass');
+		let file_content = fs.readFileSync(source_folder + '/sass/_fonts.sass');
 		if (file_content == '') {
-				fs.writeFile(source_folder + '/scss/fonts.scss', '', cb);
+				fs.writeFile(source_folder + '/scss/_fonts.scss', '', cb);
 				return fs.readdir(path.build.fonts, function (err, items) {
 					if (items) {
 						let c_fontname;
@@ -146,7 +146,7 @@ let	ttf2woff2 = require('gulp-ttf2woff2'); /*подключаем к css webp*/
 							let fontname = items[i].split('.');
 							fontname = fontname[0];
 							if (c_fontname != fontname) {
-								fs.appendFile(source_folder + '/sass/fonts.sass', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
+								fs.appendFile(source_folder + '/sass/_fonts.sass', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
 							}
 							c_fontname = fontname;
 						}

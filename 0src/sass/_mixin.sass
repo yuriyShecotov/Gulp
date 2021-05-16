@@ -1,0 +1,16 @@
+//Add fonts
+@mixin font($font_name, $file_name, $weight, $style)
+	@font-face 
+		font-family: $font_name
+		font-display: swap
+		src: url("/../fonts/#{$file_name}.woff"), url("/../fonts/#{$file_name}.woff2")
+		font-weight: $weight
+		font-style: $style
+//Adaptiv fonts    
+@mixin aFont($pcSize,$mobSize)
+    $addSize: $pcSize - $mobSize
+    $addModSize: $addSize + $addSize * 0.7
+    @media ( max-width: 768px )
+        font-size: calc(#{$mobSize + px} + #{$addModSize} * ((100vw - 320px) / #{$contWidth}))
+    @media ( min-width: 768px )
+        font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw  / #{$contWidth}))
