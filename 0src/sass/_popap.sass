@@ -1,0 +1,88 @@
+.popap
+    position: fixed
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.9)
+    top: 0
+    left: 0
+    z-index: 100
+    color: $gray
+    opacity: 0
+    visibility: hidden
+    .popap__area
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+.popap:target
+    opacity: 1
+    visibility: visible
+    .popap__body
+        min-height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 30px 10px
+        
+        .popap__content
+            background-color: $light_black
+            padding: 32px
+            border-radius: 5px
+            border: 2px solid 
+            position: relative
+            input
+                color: $gray
+                background-color: $light_grin
+                border-radius: 5px
+                border: 1px solid
+                padding: 8px 26px
+                // @include aFont(24, 12)
+                // +font(normal)
+            .popap__close
+                position: absolute
+                right: 8px
+                top: 6px
+                font-size: 24px
+                color: $gray
+                text-decoration: non
+                background-color: $light_black
+                border-color: $light_black
+                padding: 0
+
+            .popap__title
+                padding-bottom: 42px
+                // text-align: center
+                h2
+                    @include aFont(32, 32)
+                p
+                    padding-left: 40px
+            .popap__form
+                display: flex
+                justify-content: flex-end
+                flex-direction: column
+                input
+                    align-self: flex-end
+                .popap__name
+                    display: flex
+                    justify-content: space-between
+                    padding-bottom: 24px
+                    label
+                        padding-right: 12px
+                    input
+                        background-color: $gray
+                        color: $light_black
+                        border: 2px solid $light_grin
+                    input:hover
+                        border: 2px solid $grayheader
+                .popap__phone
+                    padding-bottom: 42px
+
+                    label
+                        padding-right: 12px
+                    input
+                        background-color: $gray
+                        color: $light_black
+                        border: 2px solid $light_grin
+                    input:hover
+                        border: 2px solid $grayheader

@@ -1,0 +1,206 @@
+@font-face {
+  font-family: "Akrobat";
+  font-display: swap;
+  src: url("/../fonts/Akrobat-Bold.woff"), url("/../fonts/Akrobat-Bold.woff2");
+  font-weight: "400";
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "Akrobat";
+  font-display: swap;
+  src: url("/../fonts/Akrobat-ExtraBold.woff"), url("/../fonts/Akrobat-ExtraBold.woff2");
+  font-weight: "400";
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "Akrobat";
+  font-display: swap;
+  src: url("/../fonts/Akrobat-ExtraLight.woff"), url("/../fonts/Akrobat-ExtraLight.woff2");
+  font-weight: "400";
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "Akrobat";
+  font-display: swap;
+  src: url("/../fonts/Akrobat-Regular.woff"), url("/../fonts/Akrobat-Regular.woff2");
+  font-weight: "400";
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "Akrobat";
+  font-display: swap;
+  src: url("/../fonts/Akrobat-Light.woff"), url("/../fonts/Akrobat-Light.woff2");
+  font-weight: "400";
+  font-style: "normal";
+}
+
+.popap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  top: 0;
+  left: 0;
+  z-index: 100;
+  color: #E5E5E5;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.popap .popap__area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.popap:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popap:target .popap__body {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 10px;
+}
+
+.popap:target .popap__body .popap__content {
+  background-color: #272b34;
+  padding: 32px;
+  border-radius: 5px;
+  border: 2px solid;
+  position: relative;
+}
+
+.popap:target .popap__body .popap__content input {
+  color: #E5E5E5;
+  background-color: #5DAC19;
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 8px 26px;
+}
+
+.popap:target .popap__body .popap__content .popap__close {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  font-size: 24px;
+  color: #E5E5E5;
+  -webkit-text-decoration: non;
+          text-decoration: non;
+  background-color: #272b34;
+  border-color: #272b34;
+  padding: 0;
+}
+
+.popap:target .popap__body .popap__content .popap__title {
+  padding-bottom: 42px;
+}
+
+.popap:target .popap__body .popap__content .popap__title p {
+  padding-left: 40px;
+}
+
+.popap:target .popap__body .popap__content .popap__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.popap:target .popap__body .popap__content .popap__form input {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.popap:target .popap__body .popap__content .popap__form .popap__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 24px;
+}
+
+.popap:target .popap__body .popap__content .popap__form .popap__name label {
+  padding-right: 12px;
+}
+
+.popap:target .popap__body .popap__content .popap__form .popap__name input {
+  background-color: #E5E5E5;
+  color: #272b34;
+  border: 2px solid #5DAC19;
+}
+
+.popap:target .popap__body .popap__content .popap__form .popap__name input:hover {
+  border: 2px solid #f1f1f1;
+}
+
+.popap:target .popap__body .popap__content .popap__form .popap__phone {
+  padding-bottom: 42px;
+}
+
+.popap:target .popap__body .popap__content .popap__form .popap__phone label {
+  padding-right: 12px;
+}
+
+.popap:target .popap__body .popap__content .popap__form .popap__phone input {
+  background-color: #E5E5E5;
+  color: #272b34;
+  border: 2px solid #5DAC19;
+}
+
+.popap:target .popap__body .popap__content .popap__form .popap__phone input:hover {
+  border: 2px solid #f1f1f1;
+}
+
+body {
+  font-family: Akrobat;
+  width: 1152px;
+  margin: 0 auto;
+}
+
+body .main {
+  font-size: 90px;
+}
+
+@media (min-width: 768px) {
+  .popap:target .popap__body .popap__content .popap__title h2 {
+    font-size: calc(32px + 0 * (100vw  / 1152));
+  }
+
+  body .header h1 {
+    font-size: calc(24px + 70 * (100vw  / 1152));
+  }
+}
+
+@media (max-width: 768px) {
+  .popap:target .popap__body .popap__content .popap__title h2 {
+    font-size: calc(32px + 0 * ((100vw - 320px) / 1152));
+  }
+
+  body .header h1 {
+    font-size: calc(24px + 119 * ((100vw - 320px) / 1152));
+  }
+}
